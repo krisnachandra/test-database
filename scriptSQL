@@ -1,0 +1,21 @@
+UPDATE Mahasiswa
+SET Alamat = 'Jl. Raya No.5'
+WHERE NIM = '123456';
+
+
+SELECT m.NIM, m.Nama, m.Jurusan, k.Dosen_Pengajar AS Dosen_Pembimbing
+FROM Mahasiswa m
+JOIN Mata_Kuliah k ON m.NIM = k.NIM
+WHERE m.Jurusan = 'Teknik Informatika';
+
+
+SELECT Nama, Umur
+FROM Mahasiswa
+ORDER BY Umur DESC
+LIMIT 5;
+
+
+SELECT m.Nama, k.Mata_Kuliah, k.Nilai
+FROM Mahasiswa m
+JOIN Mata_Kuliah k ON m.NIM = k.NIM
+WHERE k.Nilai > 70;
